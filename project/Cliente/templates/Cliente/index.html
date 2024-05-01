@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Cliente</h1>
+
+    {% for usuario in usuarios %}
+        <p>{{ usuario }}</p>
+        <p>{{ usuario.apellido }}</p>
+        <p>{{ usuario.nacimiento }}</p>
+        {% if usuario.pais_origen_id %}
+            <p>{{ usuario.pais_origen_id }}</p>
+        {% else %}
+            <p>No se registro país de origen</p>
+        {% endif %}
+        
+    {% endfor %}
+    
+
+</body>
+</html>

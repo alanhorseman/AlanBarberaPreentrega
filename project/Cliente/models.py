@@ -3,10 +3,13 @@ from django.db import models
 # Create your models here.
 
 class Pais(models.Model):
-    nombre = models.CharField(max_length=100, blank=True)
+    nombre = models.CharField(max_length=100, blank=True, verbose_name= "País")
 
     def __str__(self):
         return self.nombre
+    
+    class Meta:
+        verbose_name_plural = "Países"
 
 class Usuarios(models.Model):
     nombre = models.CharField(max_length=100)
@@ -16,12 +19,18 @@ class Usuarios(models.Model):
 
     def __str__(self):
         return self.nombre
+    
+    class Meta:
+        verbose_name_plural = "Usuarios"
 
 class MetodosPagos(models.Model):
-    tarjeta = models.CharField(max_length=150)
+    tarjeta = models.CharField(max_length=150, verbose_name="Tipo de tarjeta")
     titular = models.ForeignKey(Usuarios, on_delete=models.CASCADE)
     numero_tarjeta = models.IntegerField(unique=True)
     cvv = models.IntegerField(unique=True)
 
     def __str__(self):
         return f"{self.tarjeta} de {self.titular}"
+    
+    class Meta:
+        verbose_name_plural = "Metodos Pagos"
