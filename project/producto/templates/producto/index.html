@@ -6,7 +6,8 @@
 
 {% block content %}
     {% for producto in productos %}
-        {{ producto }}
+        <p>{{ producto }}</p>
+        <p>{{ producto.descripcion }}</p>
     {% endfor %}
     <a href="{% url 'core:home' %}">Volver</a>
 
