@@ -1,9 +1,7 @@
 {% extends 'core/base.html' %}
 {% load static %}
-
-{% block titulo %}
-{% endblock titulo %}
-
+{% block title %}
+{% endblock title %}
 {% block contenido %}
     <!-- Header-->
     <header class="bg-dark py-5">
@@ -14,14 +12,11 @@
             </div>
         </div>
     </header>
-
     <!-- Section-->
     <section class="py-5">
         <div class="container px-4 px-lg-5 mt-5">
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-
-                {% include 'core/components/card.html' with producto="Perfume" precio="$40"%}
-        
+                {% include 'core/components/card.html' with producto="Perfume" precio="$40" %}
             </div>
         </div>
     </section>

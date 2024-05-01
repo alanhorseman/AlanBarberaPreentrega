@@ -1,36 +1,38 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="es">
     <head>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>
+            {% block title %}
+                Caruné
+            {% endblock title %}
         </title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="{% static 'core/assets/favicon.ico' %}" />
+        <link rel="icon"
+              type="image/x-icon"
+              href="{% static 'core/assets/favicon.ico' %}" />
         <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+              rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'core/css/styles.css' %}" rel="stylesheet" />
     </head>
     <body>
-
         <!-- Navbar-->
         {% include 'core/components/navbar.html' %}
-
         <!-- Navigation-->
         <div class="container px-4 px-lg-5">
             {% block titulo %}
-                {% include 'core/components/titulo1.html' with titulo="App Caruné"%}    
+                {% include 'core/components/titulo1.html' with titulo="App Caruné" %}
             {% endblock titulo %}
-            
             {% block contenido %}
             {% endblock contenido %}
         </div>
-            
         <!-- Footer-->
         {% include 'core/components/footer.html' %}
         <!-- Bootstrap core JS-->
