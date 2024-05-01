@@ -1,15 +1,15 @@
 {% extends 'core/index.html' %}
 
-{% block title %}
+{% block titulo %}
     Productos    
-{% endblock title %}
+{% endblock titulo %}
 
-{% block content %}
+{% block contenido %}
     {% for producto in productos %}
         <p>{{ producto }}</p>
         <p>{{ producto.descripcion }}</p>
     {% endfor %}
     <a href="{% url 'core:home' %}">Volver</a>
 
-{% endblock content %}
+{% endblock contenido %}
     

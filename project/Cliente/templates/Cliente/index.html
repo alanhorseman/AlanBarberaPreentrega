@@ -1,10 +1,10 @@
 {% extends 'core/index.html' %}
 
-{% block title %}
+{% block titulo %}
     Cliente
-{% endblock title %}
+{% endblock titulo %}
 
-{% block content %}
+{% block contenido %}
     
     {% for usuario in usuarios %}
         <p>{{ usuario }}</p>
@@ -19,4 +19,4 @@
     
     <a href="{% url 'core:home' %}">Volver</a>
     
-{% endblock content %}
+{% endblock contenido %}
