@@ -1,22 +1,37 @@
 {% extends 'core/index.html' %}
 
 {% block titulo %}
-    Cliente
+    {% include 'core/components/titulo1.html' with titulo="Cliente"%}
 {% endblock titulo %}
 
 {% block contenido %}
     
-    {% for usuario in usuarios %}
-        <p>{{ usuario }}</p>
-        <p>{{ usuario.apellido }}</p>
-        <p>{{ usuario.nacimiento }}</p>
-        {% if usuario.pais_origen_id %}
-            <p>{{ usuario.pais_origen_id }}</p>
-        {% else %}
-            <p>No se registro país de origen</p>
-        {% endif %}
-    {% endfor %}
-    
-    <a href="{% url 'core:home' %}">Volver</a>
+    <div class="container">
+        <div class="row">
+            {% for usuario in usuarios %}
+                <div class="col-md-4">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ usuario.apellido }} {{ usuario.nombre }} </h5>
+                            <p></p>
+                            <p class="card-text text-muted">Fecha de nacimiento: {{ usuario.nacimiento }}</p>
+                            {% if usuario.pais_origen_id %}
+                                <p class="card-text text-muted">País de origen: {{ usuario.pais_origen_id }}</p>
+                            {% else %}
+                                <p class="card-text text-muted">No se registró país de origen</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        
+        <div class="row">
+            <div class="col-md-12">
+                <a href="{% url 'core:home' %}" class="btn btn-primary">Volver</a>
+            </div>
+        </div>
+    </div>
     
 {% endblock contenido %}
+

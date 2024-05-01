@@ -8,9 +8,6 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>
-            {% block title %}
-                Caruné
-            {% endblock title %}
         </title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{% static 'core/assets/favicon.ico' %}" />
@@ -20,18 +17,20 @@
         <link href="{% static 'core/css/styles.css' %}" rel="stylesheet" />
     </head>
     <body>
-        <!-- Navigation-->
+
+        <!-- Navbar-->
         {% include 'core/components/navbar.html' %}
-        
-        <div>
+
+        <!-- Navigation-->
+        <div class="container px-4 px-lg-5">
             {% block titulo %}
+                {% include 'core/components/titulo1.html' with titulo="App Caruné"%}    
             {% endblock titulo %}
             
             {% block contenido %}
             {% endblock contenido %}
         </div>
             
-
         <!-- Footer-->
         {% include 'core/components/footer.html' %}
         <!-- Bootstrap core JS-->
