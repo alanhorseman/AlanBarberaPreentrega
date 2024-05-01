@@ -25,12 +25,9 @@ class Usuarios(models.Model):
 
 class MetodosPagos(models.Model):
     tarjeta = models.CharField(max_length=150, verbose_name="Tipo de tarjeta")
-    titular = models.ForeignKey(Usuarios, on_delete=models.CASCADE)
-    numero_tarjeta = models.IntegerField(unique=True)
-    cvv = models.IntegerField(unique=True)
 
     def __str__(self):
-        return f"{self.tarjeta} de {self.titular}"
+        return f"{self.tarjeta}"
     
     class Meta:
         verbose_name_plural = "Metodos Pagos"
