@@ -1,22 +1,20 @@
 {% extends 'core/base.html' %}
 
 {% block title %}
-    <h2>Pagina inicial</h2>
+    <h2>Caruné</h2>
 {% endblock title %}
 
 {% block content %}
     <h1>
         <p style="color: blueviolet;">
-            Primer contenido de la pagina, con h1 y p olisss uwu
+            Seccion improvisada
         </p>
         <ul>
             <li>
                 Cremas
-                Perfumes
-                Jabones
-                Ropa
             </li>
         </ul>
-        <a href="">Cliente</a>
+        <a href="{% url 'cliente:home' %}">Clientes</a>
+        <a href="{% url 'producto:home' %}">Productos</a>
     </h1>
 {% endblock content %}

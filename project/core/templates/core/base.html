@@ -6,10 +6,14 @@
     <title>Caruné</title>
 </head>
 <body>
-    {% block title %}
-    {% endblock title %}
 
-    {% block content %}
-    {% endblock content %}
+    <h1 style="color: red;">
+        {% block title %}
+        {% endblock title %}
+    </h1>
+    <div>
+        {% block content %}
+        {% endblock content %}
+    </div>
 </body>
 </html>
