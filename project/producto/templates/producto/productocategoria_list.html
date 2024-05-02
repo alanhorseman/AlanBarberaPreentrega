@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+
+{% block titulo %}
+    {% include 'core/components/titulo1.html' with titulo="Listar Categoría de Productos"%}
+{% endblock titulo %}
+
+{% block contenido %}
+    <div class="py-lg-4">
+        <form action="{% url 'producto:home' %}" method="get">
+            <input type="text" name="consulta" placeholder="Buscar...">
+        </form>
+
+    </div>
+    {% for producto in productos %}
+        <ul>
+            <li>{{ producto.nombre }}
+                <a href="{% url 'producto:productocategoria_detail' producto.id %}">Detalle</a>
+            </li>
+        </ul>
+    {% endfor %}
+
+    <div class="fs-3 pb-4 ">
+        <a href="{% url 'producto:home' %}">Volver a Producto</a>
+    </div>
+{% endblock contenido %}
+
