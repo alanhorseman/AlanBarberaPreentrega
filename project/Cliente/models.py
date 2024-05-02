@@ -14,7 +14,7 @@ class Pais(models.Model):
 class Usuarios(models.Model):
     nombre = models.CharField(max_length=100)
     apellido = models.CharField(max_length=100)
-    nacimiento = models.DateField(null=True)
+    email = models.EmailField()
     pais_origen_id = models.ForeignKey(Pais, on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
