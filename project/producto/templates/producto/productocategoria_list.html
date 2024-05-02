@@ -6,11 +6,27 @@
 
 {% block contenido %}
     <div class="py-lg-4">
-        <form action="{% url 'producto:home' %}" method="get">
-            <input type="text" name="consulta" placeholder="Buscar...">
+        <form action="" method="get" class="input-group">
+        <input type="text" name="consulta" class="form-control" placeholder="Buscar...">
+        <button type="submit" class="btn btn-primary">
+            <i class="bi bi-search"></i>
+        </button>
         </form>
-
     </div>
+    {% comment  %}
+    {% for categoria in categorias %}
+        <ul>
+            <li>{{ categoria.nombre }}
+                <a href="{% url 'producto:productocategoria_detail' categoria.id %}">Detalle</a>
+                <a href="{% url 'producto:productocategoria_update' categoria.id %}">Cambiar</a>
+                <a href="{% url 'producto:productocategoria_delete' categoria.id %}">Eliminar</a>
+            </li>
+        </ul>
+    {% endfor %}
+
+    {# Lo de abajo es como estaba antes, aca esta el object_list, abarca todo #}
+    {% endcomment %}
+    
     {% for producto in object_list %}
         <ul>
             <li>{{ producto.nombre }}
@@ -20,9 +36,12 @@
             </li>
         </ul>
     {% endfor %}
-
-    <div class="fs-3 pb-4 ">
-        <a href="{% url 'producto:home' %}">Volver a Producto</a>
+    
+    <div class="fs-3 pb-4">
+        <a href="{% url 'producto:home' %}" class="btn btn-outline-primary btn-lg">
+          <i class="bi bi-arrow-left"></i> Volver a Producto
+        </a>
     </div>
+      
 {% endblock contenido %}
 

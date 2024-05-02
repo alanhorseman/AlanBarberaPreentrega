@@ -24,9 +24,12 @@
     </div>
   </div>
 
-  <div class="fs-3 pb-4 ">
-    <a href="{% url 'producto:home' %}">Volver a Producto</a>
+  <div class="fs-3 pb-4">
+    <a href="{% url 'producto:home' %}" class="btn btn-outline-primary btn-lg">
+      <i class="bi bi-arrow-left"></i> Volver a Producto
+    </a>
   </div>
+  
 {% endblock contenido %}
 {% comment  %}
     <form action="" method="post">
