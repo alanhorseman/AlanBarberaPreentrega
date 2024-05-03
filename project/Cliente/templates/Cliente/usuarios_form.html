@@ -3,12 +3,12 @@
     {% include 'core/components/titulo1.html' with titulo="Crear Usuario nuevo" %}
 {% endblock titulo %}
 {% block contenido %}
-<div class="container">
+  <div class="container">
     <div class="row justify-content-center mt-5">
       <div class="col-md-6">
         <div class="card">
           <div class="card-body">
-            <h2 class="card-title text-center">Formulario</h2>
+            <h2 class="card-title text-center">Agregar Usuario</h2>
             <form action="" method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
@@ -21,6 +21,12 @@
       </div>
     </div>
   </div>
+  <div class="fs-3 pb-4">
+    <a href="{% url 'cliente:home' %}" class="btn btn-outline-primary btn-lg">
+      <i class="bi bi-arrow-left"></i> Volver a cliente
+    </a>
+  </div>
+
 {% endblock contenido %}
 {% comment  %}
     <form action="" method="post">
