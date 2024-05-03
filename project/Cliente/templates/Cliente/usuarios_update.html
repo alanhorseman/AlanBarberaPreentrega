@@ -1,0 +1,30 @@
+{% extends 'core/base.html' %}
+{% block titulo %}
+    {% include 'core/components/titulo1.html' with titulo="Actualizar Usuario" %}
+{% endblock titulo %}
+{% block contenido %}
+  <div class="container">
+    <div class="row justify-content-center mt-5">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title text-center">Update</h2>
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+              <div class="text-center">
+                <button type="submit" class="btn btn-outline-primary">Guardar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="fs-3 pb-4">
+    <a href="{% url 'cliente:usuarios_list' %}" class="btn btn-outline-primary btn-lg">
+      <i class="bi bi-arrow-left"></i> Volver a cliente
+    </a>
+  </div>
+
+{% endblock contenido %}

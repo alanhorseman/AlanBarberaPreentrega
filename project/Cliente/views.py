@@ -31,3 +31,12 @@ class UsuariosList(ListView):
             queryset = queryset.filter(nombre__icontains=consulta)
 
         return queryset
+
+class UsuariosUpdate(UpdateView):
+    model = models.Usuarios
+    form_class = forms.UsuariosForm
+    success_url = reverse_lazy("cliente:usuarios_list")
+
+class UsuariosDelete(DeleteView):
+    model = models.Usuarios
+    success_url = reverse_lazy("cliente:usuarios_list")
