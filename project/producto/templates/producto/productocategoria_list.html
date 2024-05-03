@@ -27,15 +27,28 @@
     {# Lo de abajo es como estaba antes, aca esta el object_list, abarca todo #}
     {% endcomment %}
     
-    {% for producto in object_list %}
-        <ul>
-            <li>{{ producto.nombre }}
-                <a href="{% url 'producto:productocategoria_detail' producto.id %}">Detalle</a>
-                <a href="{% url 'producto:productocategoria_update' producto.id %}">Cambiar</a>
-                <a href="{% url 'producto:productocategoria_delete' producto.id %}">Eliminar</a>
-            </li>
-        </ul>
-    {% endfor %}
+    <div class="row">
+        {% for producto in object_list %}
+            <div class="col-md-6 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ producto.nombre }}</h5>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a href="{% url 'producto:productocategoria_detail' producto.id %}" class="btn btn-sm btn-outline-primary">Detalle</a>
+                                <a href="{% url 'producto:productocategoria_update' producto.id %}" class="btn btn-sm btn-outline-secondary">Cambiar</a>
+                                <a href="{% url 'producto:productocategoria_delete' producto.id %}" class="btn btn-sm btn-outline-danger">Eliminar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% if forloop.counter|divisibleby:2 %}
+                </div><div class="row">
+            {% endif %}
+        {% endfor %}
+    </div>
+    
     
     <div class="fs-3 pb-4">
         <a href="{% url 'producto:home' %}" class="btn btn-outline-primary btn-lg">
@@ -45,3 +58,14 @@
       
 {% endblock contenido %}
 
+{% comment original %}
+{% for producto in object_list %}
+        <ul>
+            <li>{{ producto.nombre }}
+                <a href="{% url 'producto:productocategoria_detail' producto.id %}">Detalle</a>
+                <a href="{% url 'producto:productocategoria_update' producto.id %}">Cambiar</a>
+                <a href="{% url 'producto:productocategoria_delete' producto.id %}">Eliminar</a>
+            </li>
+        </ul>
+    {% endfor %}
+{% endcomment %}
