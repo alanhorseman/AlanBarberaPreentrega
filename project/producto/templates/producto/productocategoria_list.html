@@ -13,20 +13,7 @@
         </button>
         </form>
     </div>
-    {% comment  %}
-    {% for categoria in categorias %}
-        <ul>
-            <li>{{ categoria.nombre }}
-                <a href="{% url 'producto:productocategoria_detail' categoria.id %}">Detalle</a>
-                <a href="{% url 'producto:productocategoria_update' categoria.id %}">Cambiar</a>
-                <a href="{% url 'producto:productocategoria_delete' categoria.id %}">Eliminar</a>
-            </li>
-        </ul>
-    {% endfor %}
 
-    {# Lo de abajo es como estaba antes, aca esta el object_list, abarca todo #}
-    {% endcomment %}
-    
     <div class="row">
         {% for producto in object_list %}
             <div class="col-md-6 mb-3">
@@ -48,7 +35,7 @@
             {% endif %}
         {% endfor %}
     </div>
-    
+
     
     <div class="fs-3 pb-4">
         <a href="{% url 'producto:home' %}" class="btn btn-outline-primary btn-lg">
@@ -57,15 +44,3 @@
     </div>
       
 {% endblock contenido %}
-
-{% comment original %}
-{% for producto in object_list %}
-        <ul>
-            <li>{{ producto.nombre }}
-                <a href="{% url 'producto:productocategoria_detail' producto.id %}">Detalle</a>
-                <a href="{% url 'producto:productocategoria_update' producto.id %}">Cambiar</a>
-                <a href="{% url 'producto:productocategoria_delete' producto.id %}">Eliminar</a>
-            </li>
-        </ul>
-    {% endfor %}
-{% endcomment %}

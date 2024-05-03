@@ -13,7 +13,7 @@
         </button>
         </form>
     </div>
-    
+
     <div class="container">
         <div class="row">
             {% for usuario in usuarios %}
@@ -34,48 +34,29 @@
                                 <p class="card-text text-muted">No se registró país de origen</p>
                             {% endif %}
                         </div>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span>{{ categoria.nombre }}</span>
+                                    <div class="btn-group">
+                                        <a href="{% url 'cliente:usuarios_update' usuario.id %}" class="btn btn-sm btn-outline-secondary">Cambiar</a>
+                                        <a href="{% url 'cliente:usuarios_delete' usuario.id %}" class="btn btn-sm btn-outline-danger">Eliminar</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        
                     </div>
                 </div>
             {% endfor %}
         </div>
-        
-        <div class="row">
-            <div class="col-md-12">
-                <a href="{% url 'core:home' %}" class="btn btn-primary">Volver</a>
-            </div>
+
+        <div class="fs-3 pb-4">
+            <a href="{% url 'cliente:home' %}" class="btn btn-outline-primary btn-lg">
+              <i class="bi bi-arrow-left"></i> Volver
+            </a>
         </div>
     </div>
 
-
-    {# Descomentar lo de abajo cuando tenga hecho detail, update y delete #}
-    {% comment  %}
-    {% for categoria in categorias %}
-        <ul>
-            <li>{{ categoria.nombre }}
-                <a href="{% url 'cliente:usuarios_detail' categoria.id %}">Detalle</a>
-                <a href="{% url 'cliente:usuarios_update' categoria.id %}">Cambiar</a>
-                <a href="{% url 'cliente:usuarios_delete' categoria.id %}">Eliminar</a>
-            </li>
-        </ul>
-    {% endfor %}
-    
-    {# Lo de abajo es como estaba antes, aca esta el object_list, abarca todo #}
-    
-    {% for producto in object_list %}
-        <ul>
-            <li>{{ producto.nombre }}
-                <a href="{% url 'producto:productocategoria_detail' producto.id %}">Detalle</a>
-                <a href="{% url 'producto:productocategoria_update' producto.id %}">Cambiar</a>
-                <a href="{% url 'producto:productocategoria_delete' producto.id %}">Eliminar</a>
-            </li>
-        </ul>
-    {% endfor %}
-    
-    <div class="fs-3 pb-4">
-        <a href="{% url 'producto:home' %}" class="btn btn-outline-primary btn-lg">
-          <i class="bi bi-arrow-left"></i> Volver a Producto
-        </a>
-    </div>
-    {% endcomment %}
 {% endblock contenido %}
 
