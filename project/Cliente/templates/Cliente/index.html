@@ -3,10 +3,23 @@
     {% include 'core/components/titulo1.html' with titulo="Cliente" %}
 {% endblock titulo %}
 {% block contenido %}
-    <div class="fs-3 pb-4 ">
-        <a href="{% url 'cliente:usuarios_create' %}">Agregar Usuario nuevo</a>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title text-center mb-4">Menú de Usuarios</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <a href="{% url 'cliente:usuarios_create' %}" class="btn btn-primary btn-lg btn-block">Agregar Usuario Nuevo</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="{% url 'cliente:usuarios_list' %}" class="btn btn-success btn-lg btn-block">Lista de Clientes</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="fs-3 pb-4 ">
-        <a href="{% url 'cliente:usuarios_list' %}">Lista de Clientes</a>
-    </div>
+</div>
 {% endblock contenido %}
