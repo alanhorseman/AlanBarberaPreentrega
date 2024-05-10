@@ -21,18 +21,67 @@
               rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'core/css/styles.css' %}" rel="stylesheet" />
+        <!-- Perplexiti login-->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login Form</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            .center {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+    
+            .form-container {
+                max-width: 400px;
+                width: 100%;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+    
+            .form-group {
+                margin-bottom: 20px;
+            }
+    
+            .form-group label {
+                font-weight: bold;
+                color: #333;
+            }
+    
+            .form-control {
+                border-radius: 3px;
+                border: 1px solid #ccc;
+                padding: 8px 12px;
+            }
+        </style>
+        <!--Perplexiti home-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tu Página con Cambios</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <style>
+          .hero-section {
+            background-image: url('static/core/img/natura2.webp');
+            background-size: contain;
+            background-position: center;
+            height: 200px; /* Ajusta la altura según tus necesidades */
+            width: 200%; /* Asegura que la sección ocupe todo el ancho */
+            margin-left: -50%; /* Margen negativo para mover la imagen hacia la izquierda */
+            }
+        </style>
     </head>
     <body>
         <!-- Navbar-->
         {% include 'core/components/navbar.html' %}
         <!-- Navigation-->
-        <div class="container px-4 px-lg-5">
-            {% block titulo %}
-                {% include 'core/components/titulo1.html' with titulo="App Caruné" %}
-            {% endblock titulo %}
-            {% block contenido %}
-            {% endblock contenido %}
-        </div>
+        {% block titulo %}
+        {% endblock titulo %}
+        {% block contenido %}
+        {% endblock contenido %}
+
         <!-- Footer-->
             {% include 'core/components/footer.html' %}
         <!-- Bootstrap core JS-->

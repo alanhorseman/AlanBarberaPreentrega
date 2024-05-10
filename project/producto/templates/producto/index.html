@@ -4,16 +4,27 @@
 {% endblock titulo %}
 {% block contenido %}
 
-    <div class="fs-3 pb-4 ">
-        <a href="{% url 'producto:productocategoria_create' %}">Crear Categorías de Productos</a>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title text-center mb-4">Menú de Navegación</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <a href="{% url 'producto:productocategoria_create' %}" class="btn btn-primary btn-lg btn-block">Crear Categorías de Productos</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="{% url 'producto:productocategoria_list' %}" class="btn btn-success btn-lg btn-block">Lista Categoría de Productos</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="{% url 'core:home' %}" class="btn btn-info btn-lg btn-block">Volver a Inicio</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <div class="fs-3 pb-4 ">
-        <a href="{% url 'producto:productocategoria_list' %}">Lista Categoría de Productos</a>
-    </div>
-
-    <div class="fs-3 pb-4 ">
-        <a href="{% url 'core:home' %}">Volver a Inicio</a>
-    </div>
+</div>
 
 {% endblock contenido %}

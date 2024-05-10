@@ -1,5 +1,6 @@
-from django.shortcuts import render, redirect
 from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from . import models, forms
 
@@ -36,8 +37,7 @@ class ProductoCategoriaUpdate(UpdateView):
     form_class = forms.ProductoCategoriaForm
     success_url = reverse_lazy("producto:productocategoria_list")
 
-
-class ProductoCategoriaDelete(DeleteView):
+class ProductoCategoriaDelete(LoginRequiredMixin, DeleteView):
     model = models.ProductoCategoria
     success_url = reverse_lazy("producto:productocategoria_list")
 
