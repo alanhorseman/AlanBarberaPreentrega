@@ -22,7 +22,20 @@
         </div>
     </section>
     <!-- Section con el card existente -->
-        <!-- Lo que estaba aca lo puse debajo del bloque contenido en base-->
+    <section class="bg-custom-color">
+        <div py-5>
+            <p></p>
+        </div>
+    </section>
+
+    <section class="position-relative">
+        <img src="{% static 'core/img/lineas.webp' %}" alt="Descripción de la imagen" class="img-fluid w-100 mb-4">
+        <div class="container px-4 px-lg-5 mt-5 position-absolute top-0 start-50 translate-middle-x">
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                {% include 'core/components/card.html' with producto="Perfume" precio="$40" %}
+            </div>
+        </div>
+    </section>
     <!-- Agrega más contenido de tu sitio web aquí -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>

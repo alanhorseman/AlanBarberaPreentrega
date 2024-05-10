@@ -10823,4 +10823,7 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+  .bg-custom-color {
+    background-color: #ffdbac; /* Cambia "#ff00ff" al color hexadecimal que desees */
+  }
 }
