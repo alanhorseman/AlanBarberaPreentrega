@@ -10826,4 +10826,7 @@ textarea.form-control-lg {
   .bg-custom-color {
     background-color: #ffdbac; /* Cambia "#ff00ff" al color hexadecimal que desees */
   }
+  .transparent-card {
+    background-color: rgba(255, 255, 255, 0.5); /* Cambia el último valor (0.5) para ajustar la opacidad */
+  }
 }
