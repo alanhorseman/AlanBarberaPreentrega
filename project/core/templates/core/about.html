@@ -1,0 +1,67 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block titulo %}
+    
+{% endblock titulo %}
+
+{% block contenido %}
+<section class="about-section my-5">
+    <div class="container">
+        <!-- Introducción -->
+        <div class="row mb-4">
+            <div class="col text-center">
+                <h2 class="text-primary">Sobre Mí</h2>
+                <p class="text-secondary">Bienvenido a la página Sobre Mí. Aquí encontrarás más información sobre mí.</p>
+            </div>
+        </div>
+
+        <!-- Información personal -->
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="card border-primary">
+                    <div class="card-body">
+                        <h3 class="card-title">Hola, soy [Tu Nombre]</h3>
+                        <p class="card-text">Soy apasionado por <strong>[tus intereses o profesión]</strong>. Trabajo en <strong>[tu campo]</strong> desde hace <strong>[número]</strong> años, y tengo una amplia experiencia en <em>[menciona algunas habilidades o proyectos específicos]</em>.</p>
+                        <p class="card-text">En mi tiempo libre, disfruto de <em>[hobbies o actividades que disfrutas]</em>. Creo en el aprendizaje continuo y siempre busco nuevas oportunidades para crecer y mejorar mis habilidades.</p>
+                        <p class="card-text">Gracias por visitar mi sitio web. Si tienes alguna pregunta o te gustaría conectar, no dudes en ponerte en contacto a través de la página de Contacto.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Imagen de ejemplo o espacio para contenido adicional -->
+            <div class="col-md-6">
+                <div class="card border-primary">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Imagen o Contenido Adicional</h3>
+                        <p class="card-text">Aquí puedes incluir una imagen, un gráfico o cualquier otro contenido relevante que quieras destacar en tu página.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Habilidades -->
+        <div class="row mb-4">
+            <div class="col">
+                <div class="card border-secondary">
+                    <div class="card-body">
+                        <h3 class="card-title">Habilidades</h3>
+                        <ul class="list-group">
+                            <li class="list-group-item">Habilidad 1: <em>Descripción de la habilidad 1</em></li>
+                            <li class="list-group-item">Habilidad 2: <em>Descripción de la habilidad 2</em></li>
+                            <li class="list-group-item">Habilidad 3: <em>Descripción de la habilidad 3</em></li>
+                            <li class="list-group-item">Habilidad 4: <em>Descripción de la habilidad 4</em></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botón para volver atrás -->
+        <div class="row">
+            <div class="col text-center">
+                <a href="javascript:history.back()" class="btn btn-primary">Volver Atrás</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock contenido %}
