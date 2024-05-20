@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+{% block contenido %}
+    <div class="container"
+         style="background-color: #f9f9f9;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0,0,0,0.1)">
+        <h2 style="text-align: center; color: #333;">Agregar País</h2>
+        <form method="post"
+              style="display: flex;
+                     flex-direction: column;
+                     align-items: center">
+            {% csrf_token %}
+            <div style="width: 100%; max-width: 400px;">{{ form.as_p }}</div>
+            <button type="submit"
+                    style="margin-top: 20px;
+                           padding: 10px 20px;
+                           background-color: #007bff;
+                           color: white;
+                           border: none;
+                           border-radius: 5px;
+                           cursor: pointer">Agregar</button>
+        </form>
+    </div>
+{% endblock contenido %}
