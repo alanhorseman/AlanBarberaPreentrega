@@ -2,12 +2,19 @@ from django.db import models
 
 # Create your models here.
 
+class CaseInsensitiveCharField(models.CharField):
+    def get_prep_value(self, value):
+        value = super().get_prep_value(value)
+        if value is not None:
+            return value.lower()
+        return value
+
 class Pais(models.Model):
-    nombre = models.CharField(max_length=100, blank=True, verbose_name= "País")
+    nombre = CaseInsensitiveCharField(max_length=100, verbose_name="País", unique=True, blank=True)
 
     def __str__(self):
         return self.nombre
-    
+
     class Meta:
         verbose_name_plural = "Países"
 
@@ -24,7 +31,7 @@ class Usuarios(models.Model):
     nombre = models.CharField(max_length=100)
     apellido = models.CharField(max_length=100)
     email = models.CharField(max_length=100)
-    tarjeta_id = models.ForeignKey(MetodosPagos, on_delete=models.SET_NULL, null=True, blank=True, verbose_name="tarjeta") #ingrese esta linea
+    tarjeta_id = models.ForeignKey(MetodosPagos, on_delete=models.SET_NULL, null=True, blank=True, verbose_name="Pago") #ingrese esta linea
     pais_origen_id = models.ForeignKey(Pais, on_delete=models.SET_NULL, null=True, blank=True, verbose_name="País")
 
     def __str__(self):
