@@ -1,16 +1,32 @@
 {% extends 'core/base.html' %}
 
 {% block titulo %}
-    {% include 'core/components/titulo1.html' with titulo="Productos: Detalle de una Categoría de Producto"%}
+    {% include 'core/components/titulo1.html' with titulo="Productos: Detalles del Producto"%}
 {% endblock titulo %}
 
 {% block contenido %}
-    <ul>
-        <li>Nombre: {{ object.nombre }}</li>
-        <li>Descripcion: {{ object.descripcion }}</li>
+<div class="container mt-4">
+    <ul class="list-group">
+        <li class="list-group-item">
+            <strong>Nombre:</strong> {{ object.nombre }}
+        </li>
+        <li class="list-group-item">
+            <strong>Codigo:</strong> {{ object.codigo }}
+        </li>
+        <li class="list-group-item">
+            <strong>Puntos:</strong> {{ object.puntos }}
+        </li>
+        <li class="list-group-item">
+            <strong>Precio revista:</strong> ${{ object.precio_revista }}
+        </li>
+        <li class="list-group-item">
+            <strong>Descripcion:</strong> {{ object.descripcion }}
+        </li>
     </ul>
 
-    <div class="fs-3 pb-4">
-        <a href="{% url 'producto:productocategoria_list' %}">Volver</a>
+    <div class="fs-3 pb-4 mt-4">
+        <a href="{% url 'producto:productocategoria_list' %}" class="btn btn-primary">Volver</a>
     </div>
+</div>
+
 {% endblock contenido %}

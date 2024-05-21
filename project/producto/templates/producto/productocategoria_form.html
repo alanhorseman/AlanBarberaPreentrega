@@ -1,6 +1,6 @@
 {% extends 'core/base.html' %}
 {% block titulo %}
-    {% include 'core/components/titulo1.html' with titulo="Crear Categoría de Productos" %}
+    {% include 'core/components/titulo1.html' with titulo="Crear Producto" %}
 {% endblock titulo %}
 {% block contenido %}
   <div class="container">
@@ -12,9 +12,9 @@
               {% if form.instance.pk %}
               Editar
               {% else %}
-              Crear
+              Nuevo
               {% endif %}
-              Categoría</h2>
+              producto</h2>
             <form action="" method="post">
                 {% csrf_token %}
                 {{ form.as_p }}

@@ -1,7 +1,7 @@
 {% extends 'core/base.html' %}
 
 {% block titulo %}
-    {% include 'core/components/titulo1.html' with titulo="Listar Categoría de Productos"%}
+    {% include 'core/components/titulo1.html' with titulo="Lista de Productos"%}
 {% endblock titulo %}
 
 {% block contenido %}
@@ -14,13 +14,15 @@
         </form>
     </div>
 
-    <div class="row">
+    <div class="row px-2"> <!-- Agregar margen a los costados -->
         {% for producto in object_list %}
-            <div class="col-md-6 mb-3">
-                <div class="card">
-                    <div class="card-body">
+            <div class="col-md-4 mb-4"> <!-- Ajustar el margen inferior a mb-4 y reducir el grosor de las tarjetas -->
+                <div class="card border-0"> <!-- Agregar la clase 'border-0' para eliminar los bordes de las tarjetas -->
+                    <div class="card-body text-center"> <!-- Agregar 'text-center' para centrar el contenido -->
                         <h5 class="card-title">{{ producto.nombre }}</h5>
-                        <div class="d-flex justify-content-between align-items-center">
+                        <p class="card-text">Puntos: {{ producto.puntos }}</p>
+                        <p class="card-text">Precio revista: ${{ producto.precio_revista }}</p>
+                        <div class="d-flex justify-content-center"> <!-- Centrar el grupo de botones -->
                             <div class="btn-group">
                                 <a href="{% url 'producto:productocategoria_detail' producto.id %}" class="btn btn-sm btn-outline-primary">Detalle</a>
                                 <a href="{% url 'producto:productocategoria_update' producto.id %}" class="btn btn-sm btn-outline-secondary">Cambiar</a>
@@ -30,11 +32,14 @@
                     </div>
                 </div>
             </div>
-            {% if forloop.counter|divisibleby:2 %}
-                </div><div class="row">
+            {% if forloop.counter|divisibleby:3 %}
+                </div><div class="row px-2"> <!-- Agregar margen a los costados -->
             {% endif %}
         {% endfor %}
     </div>
+    
+    
+    
 
     
     <div class="fs-3 pb-4">
