@@ -22,6 +22,7 @@
                         <h5 class="card-title">{{ producto.nombre }}</h5>
                         <p class="card-text">Puntos: {{ producto.puntos }}</p>
                         <p class="card-text">Precio revista: ${{ producto.precio_revista }}</p>
+                        <p class="card-text text-muted">Última actualización: {{ producto.fecha }}</p>
                         <div class="d-flex justify-content-center"> <!-- Centrar el grupo de botones -->
                             <div class="btn-group">
                                 <a href="{% url 'producto:productocategoria_detail' producto.id %}" class="btn btn-sm btn-outline-primary">Detalle</a>

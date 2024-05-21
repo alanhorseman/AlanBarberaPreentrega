@@ -23,7 +23,7 @@
                             <h5 class="card-title">{{ usuario }}</h5>
                             <p class="card-text">Apellido: {{ usuario.apellido }}</p>
                             {% if usuario.tarjeta_id %}
-                                <p class="card-text text-muted">Tarjeta: {{ usuario.tarjeta_id }}</p>
+                                <p class="card-text text-muted">Pago: {{ usuario.tarjeta_id }}</p>
                             {% else %}
                                 <p class="card-text text-muted">No se registró tarjeta</p>
                             {% endif %}
@@ -33,6 +33,7 @@
                             {% else %}
                                 <p class="card-text text-muted">No se registró país de origen</p>
                             {% endif %}
+                            <p class="card-text text-muted">Última actualización: {{ usuario.fecha }}</p>
                         </div>
                         <ul class="list-group">
                             <li class="list-group-item">
