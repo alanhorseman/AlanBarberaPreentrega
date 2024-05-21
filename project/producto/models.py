@@ -5,7 +5,7 @@ from decimal import Decimal
 class ProductoCategoria(models.Model):
     '''Categorias de productos'''
     nombre = models.CharField(max_length=100, unique=True)
-    codigo = models.PositiveIntegerField(null=False, blank=False, unique=True, default=1)
+    codigo = models.PositiveIntegerField(null=False, blank=False, unique=True, default=1, verbose_name="código")
     puntos = models.PositiveIntegerField(blank=True, default=1)
     descripcion = models.CharField(max_length=300, null=True, blank=True, verbose_name="descripción")
     precio_revista = models.DecimalField(max_digits=300, decimal_places=2, default=Decimal('0.00'))
