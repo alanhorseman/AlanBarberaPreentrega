@@ -25,8 +25,10 @@
                         <div class="d-flex justify-content-center"> <!-- Centrar el grupo de botones -->
                             <div class="btn-group">
                                 <a href="{% url 'producto:productocategoria_detail' producto.id %}" class="btn btn-sm btn-outline-primary">Detalle</a>
+                                {% if user.is_authenticated %}
                                 <a href="{% url 'producto:productocategoria_update' producto.id %}" class="btn btn-sm btn-outline-secondary">Cambiar</a>
                                 <a href="{% url 'producto:productocategoria_delete' producto.id %}" class="btn btn-sm btn-outline-danger">Eliminar</a>
+                                {% endif %}
                             </div>
                         </div>
                     </div>

@@ -11,9 +11,11 @@
                 <div class="card-body">
                     <h3 class="card-title text-center mb-4">Menú de Navegación</h3>
                     <ul class="list-group">
+                        {% if user.is_authenticated %}
                         <li class="list-group-item">
                             <a href="{% url 'producto:productocategoria_create' %}" class="btn btn-primary btn-lg btn-block">Crear Productos</a>
                         </li>
+                        {% endif %}
                         <li class="list-group-item">
                             <a href="{% url 'producto:productocategoria_list' %}" class="btn btn-success btn-lg btn-block">Lista de Productos</a>
                         </li>
