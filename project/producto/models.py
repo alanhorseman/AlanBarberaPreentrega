@@ -11,6 +11,7 @@ class ProductoCategoria(models.Model):
     descripcion = models.CharField(max_length=300, null=True, blank=True, verbose_name="descripción")
     fecha = models.DateTimeField(auto_now=True, null=True, blank=True, editable=False, verbose_name= "Última actualización")
     precio_revista = models.DecimalField(max_digits=300, decimal_places=2, default=Decimal('0.00'))
+    foto_producto = models.ImageField(upload_to="productos", null=True, blank=True)
     # precio_consultora = models.DecimalField(max_digits=300, decimal_places=2)
 
     def __str__(self):

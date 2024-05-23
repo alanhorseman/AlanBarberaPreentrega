@@ -19,6 +19,13 @@
             <div class="col-md-4 mb-4"> <!-- Ajustar el margen inferior a mb-4 y reducir el grosor de las tarjetas -->
                 <div class="card border-0"> <!-- Agregar la clase 'border-0' para eliminar los bordes de las tarjetas -->
                     <div class="card-body text-center"> <!-- Agregar 'text-center' para centrar el contenido -->
+                        {% if producto.foto_producto %}
+                            <img src="{{ producto.foto_producto.url }}" class="img-fluid" alt="{{ producto.nombre }}">
+                        {% else %}
+                        <div class="alert alert-info">
+                            <p>No hay imagen disponible para este producto.</p>
+                        </div>
+                        {% endif %}
                         <h5 class="card-title">{{ producto.nombre }}</h5>
                         <p class="card-text">Puntos: {{ producto.puntos }}</p>
                         <p class="card-text">Precio revista: ${{ producto.precio_revista }}</p>
