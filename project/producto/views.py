@@ -35,6 +35,10 @@ class ProductoCategoriaUpdate(LoginRequiredMixin, UpdateView):
     model = models.ProductoCategoria
     form_class = forms.ProductoCategoriaForm
     success_url = reverse_lazy("producto:productocategoria_list")
+    
+    def form_valid(self, form):
+        form.save()
+        return redirect(self.success_url)
 
 class ProductoCategoriaDelete(LoginRequiredMixin, DeleteView):
     model = models.ProductoCategoria
