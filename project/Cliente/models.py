@@ -34,7 +34,7 @@ class Usuarios(models.Model):
     email = models.CharField(max_length=100)
     tarjeta_id = models.ForeignKey(MetodosPagos, on_delete=models.SET_NULL, null=True, blank=True, verbose_name="Pago") #ingrese esta linea
     pais_origen_id = models.ForeignKey(Pais, on_delete=models.SET_NULL, null=True, blank=True, verbose_name="País")
-    fecha = models.DateTimeField(default=timezone.now, null=True, blank=True, editable=False, verbose_name= "Última actualización")
+    fecha = models.DateTimeField(auto_now=True, null=True, blank=True, editable=False, verbose_name= "Última actualización")
 
     def __str__(self):
         return self.nombre

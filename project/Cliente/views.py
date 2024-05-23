@@ -5,6 +5,7 @@ from . import models, forms
 from .models import Pais
 from .forms import UsuariosForm, PaisForm
 from django.http import HttpResponseRedirect
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
 
@@ -48,12 +49,12 @@ def eliminar_pais(request, pk):
     # Redirecciona a donde desees después de eliminar el país
     return redirect('cliente:home')
 
-class UsuariosCreate(CreateView):
+class UsuariosCreate(LoginRequiredMixin, CreateView):
     model = models.Usuarios
     form_class = forms.UsuariosForm
     success_url = reverse_lazy("cliente:home")
 
-class UsuariosList(ListView):
+class UsuariosList(LoginRequiredMixin, ListView):
     model = models.Usuarios
     template_name = 'cliente/usuarios_list.html'  
     context_object_name = 'usuarios'  
@@ -69,11 +70,15 @@ class UsuariosList(ListView):
 
         return queryset
 
-class UsuariosUpdate(UpdateView):
+class UsuariosUpdate(LoginRequiredMixin, UpdateView):
     model = models.Usuarios
     form_class = forms.UsuariosForm
     success_url = reverse_lazy("cliente:usuarios_list")
 
-class UsuariosDelete(DeleteView):
+    def form_valid(self, form):
+        form.save()
+        return redirect(self.success_url)
+
+class UsuariosDelete(LoginRequiredMixin, DeleteView):
     model = models.Usuarios
     success_url = reverse_lazy("cliente:usuarios_list")

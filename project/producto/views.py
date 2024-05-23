@@ -4,7 +4,6 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from . import models, forms
 
-
 def home(request):
     return render(request, "producto/index.html")
 
@@ -24,7 +23,7 @@ class ProductoCategoriaList(ListView):
 
         return queryset
 
-class ProductoCategoriaCreate(CreateView):
+class ProductoCategoriaCreate(LoginRequiredMixin, CreateView):
     model = models.ProductoCategoria
     form_class = forms.ProductoCategoriaForm
     success_url = reverse_lazy("producto:home")
@@ -32,7 +31,7 @@ class ProductoCategoriaCreate(CreateView):
 class ProductoCategoriaDetail(DetailView):
     model = models.ProductoCategoria
 
-class ProductoCategoriaUpdate(UpdateView):
+class ProductoCategoriaUpdate(LoginRequiredMixin, UpdateView):
     model = models.ProductoCategoria
     form_class = forms.ProductoCategoriaForm
     success_url = reverse_lazy("producto:productocategoria_list")
