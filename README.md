@@ -9,7 +9,7 @@ Alumno: Alan Barbera
     un producto o cliente. 
 
 ## Aplicaciones
-    Hasta ahora cuenta solamente con una aplicación Cliente y otra Producto, para poder visualizar el contenido
+    Cuenta con una aplicación Cliente y otra Producto, para poder visualizar el contenido
     de la página y cumplir con algunas de las funciones básicas del mi proyecto
 
 ### Modelos
@@ -24,7 +24,6 @@ Alumno: Alan Barbera
 ## Mejoras futuras
     Poder aplicar descuentos tanto a productos en específico, como a metodos de pagos
     Eliminar multiples productos o usuarios simultaneos, y no de a uno
-    Implementar fotos de productos
     Opción de ocultar usuarios o productos
     Poder seleccionar varias productos (como si fuese un carrito de compras) asi mostrar el total, y si es que se 
         puede aplicar algun descuento. (No será un carrito de compras propiamente dicho porque la página no será para un cliente, sino para una vendedora)
@@ -34,6 +33,11 @@ Alumno: Alan Barbera
     -No he podido todavia implementar correctamente el ingreso de un email. En ese campo, he tenido que usar 
         un CharField en vez de un EmailField. Me da un error que no he podido solucionar
 
-    -Al momento de MODIFICAR un usuario o producto ya creado, si no se desea modificar y se quiere volver atras, no 
-        devuelve a la lista, sino al home de la app. Se donde se encuentra el problema, pero aun no pude solucionarlo
-    
+    -Las imagenes solo las he podido cargar desde el panel de Administracion Django, no desde la pagina directamente
+
+## Otros
+    La implementación de imagenes no las he hecho a modo de Avatar para un perfil, sino que implementé la función para subir una imagen de los productos
+
+    El user y pass para el login es como se pidió:
+        -admin
+        -123
